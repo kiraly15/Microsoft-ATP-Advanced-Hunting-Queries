@@ -1,0 +1,5 @@
+// This query searches for connections made to a specific remote ip address. Just changed the IP with one releveant to your investigation. 
+// This query can be saved as a detection rule.
+NetworkCommunicationEvents 
+| where RemoteIP == "8.8.8.8" 
+| project EventTime, ComputerName, LocalIP,  RemoteIP, RemotePort, Protocol, LocalPort,  InitiatingProcessCreationTime, InitiatingProcessFolderPath,  InitiatingProcessFileName, InitiatingProcessCommandLine, MachineId, ReportId  
